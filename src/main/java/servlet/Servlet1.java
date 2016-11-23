@@ -37,14 +37,15 @@ public class Servlet1 extends HttpServlet {
 			//Servicios.insertarTabla(name,idioma);
 			//Servicios.insertarTabla(name, insertidioma);
 			if(idioma == ""){
-				Repositorio.insertarTablaPaises(name,insertidioma);
+				Repositorio.insertarTablaPaises(name,idioma);
 
 			}else
 			{
-				Repositorio.insertarTablaPaises(name, idioma);
+				Repositorio.insertarTablaPaises(name, insertidioma);
+				Repositorio.insertarTablaIdiomas(insertidioma);
 			}
 
-			req.getRequestDispatcher("fin.jsp").forward(req, resp);
+			req.getRequestDispatcher("mostrar.jsp").forward(req, resp);
 			//redirect(resp);
 			super.doPost(req, resp);
 		}

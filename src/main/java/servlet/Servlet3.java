@@ -23,7 +23,7 @@ public class Servlet3 extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String idioma = req.getParameter("idioma");
+		String idioma = req.getParameter("user");
 		//System.out.println(user);
 		req.setAttribute("idioma",idioma);
 
@@ -35,7 +35,7 @@ public class Servlet3 extends HttpServlet {
 	}
 
 	private void redirect(HttpServletResponse resp) throws IOException {
-		resp.sendRedirect("warning.jsp");
+		resp.sendRedirect("insertar.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
