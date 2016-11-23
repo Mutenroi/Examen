@@ -1,5 +1,8 @@
+<%@page import="servlet.Repositorio"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ page import="java.io.*,java.util.*,servlet.*" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,11 +22,14 @@
 		<tr>
 			<td><p>Idioma:</p></td>
 			<td>
-				<select name="idioma" id=""idioma>
-					<option value=""></option>
-					<option value="Español">Español</option>
-					<option value="Inglés">Inglés</option>
-					<option value="Francés">Francés</option>
+				<select name="Idioma" id="Idioma">
+					<%
+						Repositorio servicio = new Repositorio();
+						List<Idiomas> verIdiomas = servicio.listarIdiomas();
+						for (int i=0;i<verIdiomas.size();i++){
+						   out.println("<option value ='"+verIdiomas.get(i).getIdiomas()+"'>"+verIdiomas.get(i).getIdiomas()+"</option>");
+						}
+					%>
 				</select>
 			</td>
 		</tr>

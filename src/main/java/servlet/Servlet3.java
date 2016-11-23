@@ -28,7 +28,7 @@ public class Servlet3 extends HttpServlet {
 		req.setAttribute("idioma",idioma);
 
 		//JavaConexion.crearTabla();
-		Servicios.BorrarTabla(idioma);
+		Repositorio.BorrarTablaPaises(idioma);
 
 		redirect(resp);
 		super.doPost(req, resp);

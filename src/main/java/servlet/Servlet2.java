@@ -17,7 +17,7 @@ public class Servlet2 extends HttpServlet {
 	List<Paises> listAllPaises = new ArrayList<Paises>();
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		listAllPaises = Servicios.listar();
+		listAllPaises = Repositorio.listarPaises();
 		req.setAttribute("listAllPaises", listAllPaises);
 		redirect(req,resp);
 		super.doPost(req, resp);

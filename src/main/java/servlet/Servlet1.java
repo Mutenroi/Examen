@@ -32,15 +32,16 @@ public class Servlet1 extends HttpServlet {
 			req.setAttribute("idio",idioma);
 			req.setAttribute("insertidio",insertidioma);
 
-			Servicios.crearTabla();
+			Repositorio.crearTablaPaises();
+			Repositorio.crearTablaIdiomas();
 			//Servicios.insertarTabla(name,idioma);
 			//Servicios.insertarTabla(name, insertidioma);
 			if(idioma == ""){
-				Servicios.insertarTabla(name,insertidioma);
+				Repositorio.insertarTablaPaises(name,insertidioma);
 
 			}else
 			{
-				Servicios.insertarTabla(name, idioma);
+				Repositorio.insertarTablaPaises(name, idioma);
 			}
 
 			req.getRequestDispatcher("fin.jsp").forward(req, resp);
